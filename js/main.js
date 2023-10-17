@@ -58,12 +58,14 @@ function updateName() {
     nameInput.classList.remove("invalid"); // Remove any previous invalid styling
     nameError.style = "display:none;";
     nameError.textContent = "";
+    return true
   } else {
     // Display an error message or apply invalid styling
     nameField.textContent = "Invalid Name";
     nameError.style = "display:block;";
     nameError.textContent = "Invalid Name";
     nameInput.classList.add("invalid");
+    return false
   }
 }
 
@@ -105,6 +107,7 @@ function updateCardNumber() {
     carderror.textContent = "Invalid Card Number";
     carderror.style = "Display:block;";
   }
+  return true
 }
 
 function updateCcvNumber() {
@@ -119,6 +122,7 @@ function updateCcvNumber() {
     ccvInputField.classList.remove("invalid"); // Remove any previous invalid styling
     ccvError.textContent = "";
     ccvError.style = "Display:none;";
+    return true
   } else {
     // Display an error message or apply invalid styling
     if (ccvValue.length === 3) {
@@ -126,6 +130,7 @@ function updateCcvNumber() {
       ccvError.textContent = "Invalid CCV";
       ccvError.style = "Display:block;";
       ccvInputField.classList.add("invalid");
+      return false
     }
   }
 }
@@ -149,12 +154,14 @@ function updateExpMonth() {
     monthInputField.classList.remove("invalid"); // Remove any previous invalid styling
     Error.textContent = "";
     Error.style = "Display:none;";
+    return true
   } else {
     // Display an error message or apply invalid styling
     monthField.textContent = "Invalid Month";
     Error.textContent = "Invalid Month";
     Error.style = "Display:block;";
     monthInputField.classList.add("invalid");
+    return false
   }
 }
 
@@ -176,12 +183,14 @@ function updateExpYear() {
     yearInputField.classList.remove("invalid"); // Remove any previous invalid styling
     Error.textContent = "";
     Error.style = "Display:none;";
+    return true
   } else {
     // Display an error message or apply invalid styling
     yearField.textContent = "Invalid Year";
     yearInputField.classList.add("invalid");
     Error.textContent = "Invalid Year";
     Error.style = "Display:block;";
+    return false
   }
 }
 
@@ -212,26 +221,31 @@ function checkexpDate() {
     monthInputField.classList.add("invalid");
     Error.textContent = "Invalid Year/Month";
     Error.style = "Display:block;";
+    return false
   } else if (!isValidMonth) {
     // Display an error message or apply invalid styling
     monthField.textContent = "Invalid Month";
     Error.textContent = "Invalid Month";
     Error.style = "Display:block;";
     monthInputField.classList.add("invalid");
+    return false
   } else if (!isValidYear) {
     // Display an error message or apply invalid styling
     yearField.textContent = "Invalid Year";
     yearInputField.classList.add("invalid");
     Error.textContent = "Invalid Year";
     Error.style = "Display:block;";
+    return false
   } else {
     yearField.textContent = yearValue;
     monthField.textContent = monthValue;
     Error.textContent = "";
     Error.style = "Display:none;";
+    return true
   }
 }
 
+// depracted
 function isValidCreditCardNumber(cardNumber) {
   // Remove spaces and non-digit characters
   cardNumber = cardNumber.replace(/\D/g, "");
@@ -260,3 +274,55 @@ function isValidCreditCardNumber(cardNumber) {
 
   return sum % 10 === 0;
 }
+
+
+
+
+function finalCheck() {
+    debugger
+    // Reset error messages
+    document.getElementById("error__name").textContent = "";
+    document.getElementById("error__cardnum").textContent = "";
+    document.getElementById("error__date").textContent = "";
+    document.getElementById("error__ccv").textContent = "";
+
+    // Validate cardholder name
+    if (!updateName()) {
+      document.getElementById("error__name").textContent = "Invalid name format";
+      return false;
+    }
+
+    // Validate card number
+    if (!updateCardNumber()) {
+      document.getElementById("error__cardnum").textContent = "Invalid card number format";
+      return false;
+    }
+
+    // Validate expiration date
+    if (!checkexpDate()) {
+      document.getElementById("error__date").textContent = "Invalid expiration date";
+      return false;
+    }
+
+    // Validate CCV
+    if (!updateCcvNumber()) {
+      document.getElementById("error__ccv").textContent = "Invalid CCV format";
+      return false;
+    }
+
+    // If all validations pass, the form will be submitted
+    cardHolderName = ""
+    cardNumber= ""
+    month = ""
+    year = ""
+    ccv= ""
+    return true;
+  }
+
+
+  function saveCard(){
+    if (finalCheck()){
+        const inputContainer = document.getElementById("info__container")
+        inputContainer.style = "Display:none;"
+    }
+  }

@@ -25,7 +25,7 @@
           <div class="ccv"><h1 id="ccvField">000</h1></div>
         </div>
       </div>
-      <form class="info__fillout__container">
+      <div class="info__fillout__container" id="info__container">
           
           <div class="holder_name__container">
               <h1>Cardholder Name</h1>
@@ -54,9 +54,9 @@
             </div>
           </div>
           
-          <input class="confirm_btn__container" type="submit" value="Confirm">
-
-        </form>
+          <!-- <input class="confirm_btn__container" type="submit" value="Confirm" oninput="finalCheck()"> -->
+          <button class="confirm_btn__container" onclick="saveCard()">Confirm</button>
+        </div>
   </div>
 </body>
 </html>
