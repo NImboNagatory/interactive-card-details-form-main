@@ -172,7 +172,7 @@ function updateExpYear() {
     const yearValue = yearInputField.value;
 
     // Check if the input is a valid year (four digits)
-    const isValidYear = /^\d{4}$/.test(yearValue);
+    const isValidYear = /^\d{1,2}$/.test(yearValue) && parseInt(yearValue, 10) >= 23 && parseInt(yearValue, 10) <= 30;;
 
     if (isValidYear) {
         yearField.textContent = yearValue;
