@@ -1,62 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="css/main.css">
-  <script rel="text/javascript" src="./js/main.js"></script>
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script rel="text/javascript" src="./js/main.js"></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-</head>
-<body>
-  <div class="main__container">
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <div class="main__container">
       <div class="card__container">
         <div class="card__front">
-          <div class="card__carier" id="card__carier"><img id="card__carrier_svg" src="./assets/cerier_default.svg"></div>
-          <div class="card__number"><h1 id="CardNumber">0000 0000 0000 0000</h1></div>
-          <div class="card__holder"><h1 id = "CardHolderName">John Doe</h1></div>
-          <div class="expiration__date"><h1 id="month">00</h1><h1>/</h1><h1 id="year">00</h1></div>
+          <div class="card__carier" id="card__carier">
+            <img id="card__carrier_svg" src="./assets/cerier_default.svg" />
+          </div>
+          <div class="card__number">
+            <h1 id="CardNumber">0000 0000 0000 0000</h1>
+          </div>
+          <div class="card__holder"><h1 id="CardHolderName">John Doe</h1></div>
+          <div class="expiration__date">
+            <h1 id="month">00</h1>
+            <h1>/</h1>
+            <h1 id="year">00</h1>
+          </div>
         </div>
         <div class="card__back">
           <div class="ccv"><h1 id="ccvField">000</h1></div>
         </div>
       </div>
       <div class="info__fillout__container" id="info__container">
-          
-          <div class="holder_name__container">
-              <h1>Cardholder Name</h1>
-              <input type="text" placeholder="e.g. John Doe" required id = "CardHolderNameInput" oninput="updateName()" maxlength="35">
-              <p id="error__name" class="error"></p>
-          </div>
-          <div class="card_number__container">
-              <h1>Card Number</h1>
-              <input type="text" placeholder="0000 0000 0000 0000" required id="CardNumberInput" oninput="updateCardNumber()" maxlength="19">
-              <p id="error__cardnum" class="error"></p>
-          </div>
-          <div class="display_flex_gap_20px">
-            <div class="expiration_date__container">
-              <h1>Exp. Date (MM/YY)</h1>
-              <div>              
-                <input type="text" placeholder="MM" required oninput="checkexpDate()" id="monthInput" maxlength="2">
-                <input type="text" placeholder="YY" required oninput="checkexpDate()" id="yearInput" maxlength="2"> 
-              </div>
-              <p id="error__date" class="error"></p>
-
-            </div>
-            <div class="ccv__container">
-              <h1>CCV</h1>
-              <input type="text" placeholder="e.g 123" required id="ccvinput" oninput="updateCcvNumber()" maxlength="3">
-              <p id="error__ccv" class="error"></p> 
-            </div>
-          </div>
-          
-          <!-- <input class="confirm_btn__container" type="submit" value="Confirm" oninput="finalCheck()"> -->
-          <button class="confirm_btn__container" onclick="saveCard()">Confirm</button>
+        <div class="holder_name__container">
+          <h1>Cardholder Name</h1>
+          <input
+            type="text"
+            placeholder="e.g. John Doe"
+            required
+            id="CardHolderNameInput"
+            oninput="updateName()"
+            maxlength="35"
+          />
+          <p id="error__name" class="error"></p>
         </div>
-  </div>
-</body>
+        <div class="card_number__container">
+          <h1>Card Number</h1>
+          <input
+            type="text"
+            placeholder="0000 0000 0000 0000"
+            required
+            id="CardNumberInput"
+            oninput="updateCardNumber()"
+            maxlength="19"
+          />
+          <p id="error__cardnum" class="error"></p>
+        </div>
+        <div class="display_flex_gap_20px">
+          <div class="expiration_date__container">
+            <h1>Exp. Date (MM/YY)</h1>
+            <div>
+              <input
+                type="text"
+                placeholder="MM"
+                required
+                oninput="checkexpDate()"
+                id="monthInput"
+                maxlength="2"
+              />
+              <input
+                type="text"
+                placeholder="YY"
+                required
+                oninput="checkexpDate()"
+                id="yearInput"
+                maxlength="2"
+              />
+            </div>
+            <p id="error__date" class="error"></p>
+          </div>
+          <div class="ccv__container">
+            <h1>CCV</h1>
+            <input
+              type="text"
+              placeholder="e.g 123"
+              required
+              id="ccvinput"
+              oninput="updateCcvNumber()"
+              maxlength="3"
+            />
+            <p id="error__ccv" class="error"></p>
+          </div>
+        </div>
+
+        <!-- <input class="confirm_btn__container" type="submit" value="Confirm" oninput="finalCheck()"> -->
+        <button class="confirm_btn__container" onclick="saveCard()">
+          Confirm
+        </button>
+      </div>
+      <div class="confirmation__container" id="confirmation__container">
+        <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <circle cx="40" cy="40" r="40" fill="url(#paint0_linear_0_318)"/>
+          <path d="M28 39.9199L36.0801 48L52.0801 32" stroke="white" stroke-width="3"/>
+          <defs>
+            <linearGradient id="paint0_linear_0_318" x1="-23.0143" y1="11.5071" x2="1.03143e-06" y2="91.5071" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6348FE"/>
+              <stop offset="1" stop-color="#610595"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h1>THANK YOU!</h1>
+        <p>We’ve added your card details</p>
+        <button id = "back__btn" onclick="backtoinput()">Continue</button>
+      </div>
+    </div>
+  </body>
 </html>

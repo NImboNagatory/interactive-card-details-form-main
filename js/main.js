@@ -323,6 +323,27 @@ function finalCheck() {
   function saveCard(){
     if (finalCheck()){
         const inputContainer = document.getElementById("info__container")
+        const confirmContainer = document.getElementById("confirmation__container")
         inputContainer.style = "Display:none;"
+        confirmContainer.style = "Display:flex;"
     }
+  }
+
+  function backtoinput(){
+    const nameInput = document.getElementById("CardHolderNameInput");
+    const CardNumberInput = document.getElementById("CardNumberInput");
+    const ccvInputField = document.getElementById("ccvinput");
+    const yearInputField = document.getElementById("yearInput");
+    const monthField = document.getElementById("month");
+
+    nameInput.value = ""
+    CardNumberInput.value = ""
+    ccvInputField.value = ""
+    yearInputField.value = ""
+    monthField.value = ""
+
+    const inputContainer = document.getElementById("info__container")
+    const confirmContainer = document.getElementById("confirmation__container")
+    inputContainer.style = "Display:flex;"
+    confirmContainer.style = "Display:none;"
   }
