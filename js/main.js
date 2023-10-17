@@ -5,8 +5,11 @@ setInterval(restoreDefaults, 1)
 function restoreDefaults(){
     const nameField = document.getElementById("CardHolderName")
     const nameInput = document.getElementById("CardHolderNameInput")
+    const nameError = document.getElementById("error__name")
     if (nameInput.value === ""){
         nameField.textContent = "John Doe"
+        nameError.style = "display:none;"
+        nameError.textContent = ""
     }
     const CardNumberField = document.getElementById("CardNumber");
     const CardNumberInput = document.getElementById("CardNumberInput");
@@ -42,6 +45,7 @@ function restoreDefaults(){
 function updateName() {
     const nameField = document.getElementById("CardHolderName");
     const nameInput = document.getElementById("CardHolderNameInput");
+    const nameError = document.getElementById("error__name")
     const nameValue = nameInput.value;
 
     // Regular expression to match alphabetic characters and spaces
@@ -50,9 +54,13 @@ function updateName() {
     if (nameRegex.test(nameValue)) {
         nameField.textContent = nameValue;
         nameInput.classList.remove("invalid"); // Remove any previous invalid styling
+        nameError.style = "display:none;"
+        nameError.textContent = ""
     } else {
         // Display an error message or apply invalid styling
         nameField.textContent = "Invalid Name";
+        nameError.style = "display:block;"
+        nameError.textContent = "Invalid Name"
         nameInput.classList.add("invalid");
     }
 }
@@ -61,6 +69,7 @@ function updateName() {
 function updateCardNumber() {
     const CardNumberInput = document.getElementById("CardNumberInput");
     const cardCarrierSvg = document.getElementById("card__carrier_svg");
+    const CardNumberField = document.getElementById("CardNumber");
 
     // Remove non-numeric characters
     const inputValue = CardNumberInput.value.replace(/\D/g, '');
@@ -74,21 +83,15 @@ function updateCardNumber() {
     }
 
     CardNumberInput.value = formattedValue;
-
+    CardNumberField.textContent = formattedValue;
     // Determine the card carrier based on patterns in the card number
-    let cardCarrier = '';
     if (/^4/.test(inputValue)) {
-        cardCarrier = 'visa';
         cardCarrierSvg.src = 'assets/visa-svgrepo-com.svg';
     } else if (/^5/.test(inputValue)) {
-        cardCarrier = 'mastercard';
         cardCarrierSvg.src = 'assets/mastercard-svgrepo-com.svg';
     } else if (/^3/.test(inputValue)) {
-        cardCarrier = 'amex';
         cardCarrierSvg.src = 'assets/amex-3-svgrepo-com.svg';
     }
-
-    console.log("Card Carrier:", cardCarrier);
 }
 
 

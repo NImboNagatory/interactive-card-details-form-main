@@ -99,7 +99,11 @@ table {
     margin-top: 28px;
     margin-left: 32px;
 }
-
+.card__carier > img{
+    width: 84px;
+    height: 47px;
+    flex-shrink: 0;
+}
 .card__number{
     position: absolute;
     margin-top: 139px;
@@ -359,6 +363,25 @@ table {
     line-height: normal;
     text-indent: 16px;
 }
+
+
+.error{
+    color: var(--Red, #FF5050);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body (S) */
+    font-family: Space Grotesk;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: none;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+
+
 
 .display_flex_gap_20px{
     display: flex;
