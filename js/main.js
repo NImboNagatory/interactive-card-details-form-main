@@ -10,8 +10,10 @@ function restoreDefaults(){
     }
     const CardNumberField = document.getElementById("CardNumber");
     const CardNumberInput = document.getElementById("CardNumberInput");
+    const cardCarrierSvg = document.getElementById("card__carrier_svg");
     if (CardNumberInput.value === ""){
         CardNumberField.textContent = "0000 0000 0000 0000"
+        cardCarrierSvg.src = "assets/cerier_default.svg"
     }
     const ccvInputField = document.getElementById("ccvinput")
     const ccvField = document.getElementById("ccvField")
@@ -57,11 +59,13 @@ function updateName() {
 
 
 function updateCardNumber() {
-    const CardNumberField = document.getElementById("CardNumber");
     const CardNumberInput = document.getElementById("CardNumberInput");
-    const inputValue = CardNumberInput.value.replace(/\D/g, ''); // Remove non-numeric characters
-    let formattedValue = '';
+    const cardCarrierSvg = document.getElementById("card__carrier_svg");
 
+    // Remove non-numeric characters
+    const inputValue = CardNumberInput.value.replace(/\D/g, '');
+
+    let formattedValue = '';
     for (let i = 0; i < inputValue.length; i++) {
         if (i > 0 && i % 4 === 0) {
             formattedValue += ' '; // Add a space every 4 digits
@@ -70,7 +74,21 @@ function updateCardNumber() {
     }
 
     CardNumberInput.value = formattedValue;
-    CardNumberField.textContent = formattedValue;
+
+    // Determine the card carrier based on patterns in the card number
+    let cardCarrier = '';
+    if (/^4/.test(inputValue)) {
+        cardCarrier = 'visa';
+        cardCarrierSvg.src = 'assets/visa-svgrepo-com.svg';
+    } else if (/^5/.test(inputValue)) {
+        cardCarrier = 'mastercard';
+        cardCarrierSvg.src = 'assets/mastercard-svgrepo-com.svg';
+    } else if (/^3/.test(inputValue)) {
+        cardCarrier = 'amex';
+        cardCarrierSvg.src = 'assets/amex-3-svgrepo-com.svg';
+    }
+
+    console.log("Card Carrier:", cardCarrier);
 }
 
 
