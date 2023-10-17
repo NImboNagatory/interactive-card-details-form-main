@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Outfit:wght@300&family=Space+Grotesk:wght@500&display=swap');
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+.main__container{
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 127px;
+}
+
+.main__container{
+    background-image: url("../images/bg-main-desktop.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card__container{
+    width: 541px;
+    height: 527px;
+    display:flex;
+    flex-direction: column;
+    gap:37px;
+    margin-left: 170px;
+}
+
+.card__front{
+    background-image: url("../images/bg-card-front.png");
+    width: 447px;
+    height: 245px;
+    background-position: center;
+}
+
+.card__back{
+    background-image: url("../images/bg-card-back.png");
+    width: 447px;
+    height: 245px;
+    background-position: center;
+    margin-left: 94px;
+}
+.card__front{
+    position: relative;
+}
+
+.card__carier{
+    position:absolute;
+    top: 0;
+    left: 0;
+    margin-top: 28px;
+    margin-left: 32px;
+}
+
+.card__number{
+    position: absolute;
+    margin-top: 139px;
+    margin-left: 32px;   
+}
+
+.card__number >h1{
+    text-align: center;
+    color: var(--White, #FFF);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Heading (XL) */
+    font-family: Space Grotesk;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 3.422px;
+}
+
+.card__holder{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left:32px;
+    margin-bottom: 26.5px;
+}
+
+.card__holder > h1{
+    color: var(--White, #FFF);
+    font-feature-settings: 'clig' off, 'liga' off;
+    
+    /* Body (L) */
+    font-family: Space Grotesk;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.expiration__date{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 26.5px;
+    margin-right: 32px;
+    display: flex;
+}
+
+.expiration__date > h1{
+    color: var(--White, #FFF);
+    text-align: right;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body (L) */
+    font-family: Space Grotesk;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card__back{
+    position: relative;
+}
+
+
+.ccv{
+    position:absolute;
+    right: 0;
+    top: 0;
+    margin-top: 111px;
+    margin-right: 57px;
+}
+.ccv > h1{
+    color: var(--White, #FFF);
+    text-align: right;
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body (L) */
+    font-family: Space Grotesk;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+.info__fillout__container{
+    width: 381px;
+    height: 352px;
+    flex-shrink: 0;
+    display:flex;
+    flex-direction: column;
+    gap: 26px;
+    margin-right: 450px;
+}
+
+.holder_name__container > h1{
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body (M) */
+    font-family: Space Grotesk;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.holder_name__container > input{
+    margin-top: 9px;
+    width: 381px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Light-Grey, #DFDEE0);
+    background: var(--White, #FFF);
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Heading (L) */
+    font-family: Space Grotesk;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-indent: 16px;
+}
+
+.card_number__container > h1{
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body (M) */
+    font-family: Space Grotesk;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.card_number__container > input{
+    margin-top: 9px;
+    width: 381px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Light-Grey, #DFDEE0);
+    background: var(--White, #FFF);
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Heading (L) */
+    font-family: Space Grotesk;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-indent: 16px;
+}
+
+.expiration_date__container > h1{
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body (M) */
+    font-family: Space Grotesk;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.expiration_date__container > div{
+    margin-top: 9px;
+    display: flex;
+    gap: 10px;
+}
+
+.expiration_date__container > div input:nth-child(1){
+    width: 80px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Light-Grey, #DFDEE0);
+    background: var(--White, #FFF);
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Heading (L) */
+    font-family: Space Grotesk;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-indent: 16px;
+}
+.expiration_date__container > div input:nth-child(2){
+    width: 80px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Light-Grey, #DFDEE0);
+    background: var(--White, #FFF);
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Heading (L) */
+    font-family: Space Grotesk;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-indent: 16px;
+}
+.ccv__container > h1{
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Body (M) */
+    font-family: Space Grotesk;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.ccv__container > input{
+    margin-top: 9px;
+    width: 180px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--Light-Grey, #DFDEE0);
+    background: var(--White, #FFF);
+    color: var(--Deep-Violet, #21092F);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Heading (L) */
+    font-family: Space Grotesk;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-indent: 16px;
+}
+
+.display_flex_gap_20px{
+    display: flex;
+    gap: 20px;
+}
+
+.confirm_btn__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 392px;
+    height: 53px;
+    border-radius: 8px;
+    background: var(--Deep-Violet, #21092F);
+    flex-shrink: 0;
+    cursor: pointer;
+    color: var(--White, #FFF);
+    font-feature-settings: 'clig' off, 'liga' off;
+
+    /* Heading (L) */
+    font-family: Space Grotesk;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

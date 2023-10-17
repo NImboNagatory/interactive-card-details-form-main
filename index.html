@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/main.css">
+  <script rel="text/javascript" src="./js/main.js"></script>
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  <div class="main__container">
+      <div class="card__container">
+        <div class="card__front">
+          <div class="card__carier"><img src="./assets/cerier_default.svg"></div>
+          <div class="card__number"><h1 id="CardNumber">0000 0000 0000 0000</h1></div>
+          <div class="card__holder"><h1 id = "CardHolderName">John Doe</h1></div>
+          <div class="expiration__date"><h1 id="month">00</h1><h1>/</h1><h1 id="year">00</h1></div>
+        </div>
+        <div class="card__back">
+          <div class="ccv"><h1 id="ccvField">000</h1></div>
+        </div>
+      </div>
+      <form class="info__fillout__container">
+          
+          <div class="holder_name__container">
+              <h1>Cardholder Name</h1>
+              <input type="text" placeholder="e.g. John Doe" required id = "CardHolderNameInput" oninput="updateName()" maxlength="35">
+          </div>
+          <div class="card_number__container">
+              <h1>Card Number</h1>
+              <input type="text" placeholder="0000 0000 0000 0000" required id="CardNumberInput" oninput="updateCardNumber()" maxlength="19">
+          </div>
+          <div class="display_flex_gap_20px">
+            <div class="expiration_date__container">
+              <h1>Exp. Date (MM/YY)</h1>
+              <div>              
+                <input type="text" placeholder="MM" required oninput="updateExpMonth()" id="monthInput" maxlength="2">
+                <input type="text" placeholder="YY" required oninput="updateExpYear()" id="yearInput" maxlength="2"> 
+              </div>
+
+            </div>
+            <div class="ccv__container">
+              <h1>CCV</h1>
+              <input type="text" placeholder="e.g 123" required id="ccvinput" oninput="updateCcvNumber()" maxlength="3"> 
+            </div>
+          </div>
+          
+          <input class="confirm_btn__container" type="submit" value="Confirm">
+
+        </form>
+  </div>
+</body>
+</html>
