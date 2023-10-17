@@ -31,19 +31,18 @@ function restoreDefaults(){
     }
     const monthInputField = document.getElementById("monthInput")
     const monthField = document.getElementById("month")
-    const montnError = document.getElementById("error__date")
     if (monthInputField.value === ""){
         monthField.textContent = "00"
-        montnError.textContent = ""
-        montnError.style = "Display:none;"
     }
     const yearInputField = document.getElementById("yearInput")
     const yearField = document.getElementById("year")
-    const yearError = document.getElementById("error__date")
+    const dateError = document.getElementById("error__date")
     if (yearInputField.value === ""){
         yearField.textContent = "00"
-        yearError.textContent = ""
-        yearError.style = "Display:none;"
+    }
+    if ((yearInputField.value === "") && (monthInputField.value === "")){
+        dateError.textContent = ""
+        dateError.style = "Display:none;"
     }
     
 }
