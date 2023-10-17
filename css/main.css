@@ -205,7 +205,8 @@ table {
     display:flex;
     flex-direction: column;
     gap: 26px;
-    margin-right: 450px;
+    margin-right: 405px;
+    padding-right: 45px;
 }
 
 .holder_name__container > h1{
