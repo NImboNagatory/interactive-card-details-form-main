@@ -113,6 +113,7 @@ function updateCardNumber() {
     CardNumberField.textContent = "0000 0000 0000 0000";
     carderror.textContent = "Invalid Card Number";
     carderror.style = "Display:block;";
+    return false
   }
   return true
 }
