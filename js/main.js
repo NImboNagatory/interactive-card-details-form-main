@@ -42,7 +42,14 @@ function restoreDefaults() {
     dateError.textContent = "";
     dateError.style = "Display:none;";
   }
+  
 }
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth < 540) {
+    window.innerWidth = 540; // Set the window width to a minimum of 540px
+  }
+});
 
 function updateName() {
   const nameField = document.getElementById("CardHolderName");

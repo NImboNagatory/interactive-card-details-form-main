@@ -476,3 +476,40 @@ table {
     justify-content: center;
     align-items: center;
 }
+
+@media only screen and (max-width: 1270px) {
+    .main__container{
+        background-image: url("../images/bg-main-mobile.png");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        flex-direction: column;
+    }
+    .confirmation__container{
+        margin-right: 0;
+        padding-right: 0;
+    }
+    .card__container {
+        margin-top: 27%;
+        margin-left: 0;
+        gap:0;
+        padding-left: 17px;
+        padding-right: 16px;
+        position: relative;
+    }
+    .info__fillout__container{
+        margin-right: 0;
+        padding-right: 0;
+        padding-bottom: 45px;    }
+
+    .card__back{
+        order: 1;
+        margin-left: 100px;
+        position: absolute;
+    }
+    .card__front{
+        order: 2;
+        margin-top: 139px;
+    }
+    
+}
