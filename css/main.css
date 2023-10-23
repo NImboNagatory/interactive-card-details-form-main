@@ -491,7 +491,7 @@ table {
     }
     .card__container {
         margin-top: 27%;
-        margin-left: 1px;
+        margin-left: 10px;
         gap:0;
         padding-left: 17px;
         padding-right: 16px;
@@ -514,6 +514,7 @@ table {
     .card__back{
         order: 1;
         position: absolute;
+        margin-left: 56px;
     }
     .card__front{
         order: 2;
@@ -602,5 +603,52 @@ table {
     }
     .card__carier{
         margin-left: 19px;
+    }
+
+    .holder_name__container > input{
+        width: 327px;
+        height: 45px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border: 1px solid var(--Light-Grey, #DFDEE0);
+        background: var(--White, #FFF);
+    }
+    .card_number__container > input{
+        width: 327px;
+        height: 45px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border: 1px solid var(--Light-Grey, #DFDEE0);
+        background: var(--White, #FFF)   
+    }
+    .ccv__container > input{
+        width: 127px;
+        height: 45px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border: 1px solid var(--Light-Grey, #DFDEE0);
+        background: var(--White, #FFF);
+    }
+
+    .expiration_date__container > div > input{
+        width: 72px;
+        height: 45px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        border: 1px solid var(--Light-Grey, #DFDEE0);
+        background: var(--White, #FFF);
+    }
+    .confirm_btn__container{
+        width: 327px;
+        height: 53px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        background: var(--Deep-Violet, #21092F);
+    }
+
+    .info__fillout__container{
+        width: 327px;
+        height: 328px;
+        flex-shrink: 0;
     }
 }
