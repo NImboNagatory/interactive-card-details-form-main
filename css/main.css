@@ -482,7 +482,7 @@ table {
         background-image: url("../images/bg-main-mobile.png");
         background-position: top;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 100% 240px;
         flex-direction: column;
     }
     .confirmation__container{
@@ -491,20 +491,28 @@ table {
     }
     .card__container {
         margin-top: 27%;
-        margin-left: 0;
+        margin-left: 1px;
         gap:0;
         padding-left: 17px;
         padding-right: 16px;
         position: relative;
+        flex-shrink: 1;
+        width: 343px;
+        height: 251px;
+        flex-shrink: 0;
+        padding-left: 0;
+         padding-right: 0;
+         margin-top: 4.545454545454546%;
     }
     .info__fillout__container{
         margin-right: 0;
         padding-right: 0;
-        padding-bottom: 45px;    }
+        padding-bottom: 45px; 
+      
+     }
 
     .card__back{
         order: 1;
-        margin-left: 100px;
         position: absolute;
     }
     .card__front{
@@ -512,13 +520,87 @@ table {
         margin-top: 139px;
     }
     .card__front{
-        width: 347px;
-        height: 245px;
+        width: 285px;
+        height: 156.208px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        background: linear-gradient(164deg, #6348FE 4.74%, #610595 88.83%);
+        background-image: url("../images/bg-card-front.png");
+        background-position: center;
+        background-size: contain;
     }
     
     .card__back{
-        width: 347px;
-        height: 245px;
+        width: 286px;
+        height: 157px;
+        flex-shrink: 0;
+        border-radius: 6px;
+        background: linear-gradient(169deg, #FFF 5%, #D2D3D9 91.69%);
+        background-image: url("../images/bg-card-back.png");
+        background-position: center;
+        background-size: contain;
     }
-    
+    .ccv > h1{
+        color: var(--White, #FFF);
+        text-align: right;
+        font-family: Space Grotesk;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 1.286px;
+        text-transform: uppercase;
+    }
+    .ccv{
+        margin-right: 36.02px;
+        margin-top: 70.64px;
+    }
+    .card__number > h1{
+        color: var(--White, #FFF);
+        font-family: Space Grotesk;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 2.2px;
+    }
+    .card__number{
+        margin-top: 84.6px;
+        margin-left: 19px;
+    }
+    .card__holder > h1{
+        color: var(--White, #FFF);
+        font-family: Space Grotesk;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 1.286px;
+        text-transform: uppercase;
+    }
+    .card__holder{
+        margin-left: 19px;
+    }
+    .expiration__date > h1{
+        color: var(--White, #FFF);
+        text-align: right;
+        font-family: Space Grotesk;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 1.286px;
+        text-transform: uppercase;
+    }
+    .expiration__date{
+        margin-right: 20.89px;
+    }
+    .card__carier > img{
+        width: 54px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+    .card__carier{
+        margin-left: 19px;
+    }
 }
